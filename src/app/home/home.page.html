@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/category"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Our Catalog
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon slot="icon-only" routerLink="/add" name="add-outline"></ion-icon>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="col-sm-12" align="right" >
+     <ion-button [routerLink]="['/own']" size="small"> View my list</ion-button>
+</div>
+<ion-list>
+
+  <span [routerLink]="['/details', course.id]" *ngFor="let course of tab" >
+
+    <ion-item>
+      <ion-thumbnail>
+        <img height="500" [src]="course.image"/>
+
+      </ion-thumbnail>
+
+      <ion-label> {{ course.res_name }} </ion-label>
+      <br>
+      <ion-label> {{ course.desciption }} </ion-label>
+
+      </ion-item>
+  </span>
+</ion-list>
+
+</ion-content>

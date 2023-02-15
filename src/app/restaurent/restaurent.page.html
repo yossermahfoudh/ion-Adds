@@ -1,0 +1,31 @@
+<ion-header>
+<ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/restaurent"></ion-back-button>
+  </ion-buttons>
+  <ion-title> Add Restaurant </ion-title>
+  <ion-buttons slot="end">
+    <ion-icon slot="icon-only" routerLink="/add" name="add-outline"></ion-icon>
+
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <span [routerLink]="['/details', course.id]" *ngFor="let course of tab" >
+
+      <ion-item  *ngIf="course.name === 'Nidhal Jelassi'" >
+        <ion-thumbnail>
+          <img height="500" [src]="course.image"/>
+
+        </ion-thumbnail>
+
+        <ion-label>{{ course.res_name }} </ion-label>
+
+        </ion-item>
+    </span>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/cars"></ion-back-button>
+    </ion-buttons>
+    <ion-title> Add Car </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon slot="icon-only" routerLink="/cars/add" name="add-outline"></ion-icon>
+
+    </ion-buttons>
+  </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div class="col-sm-12" align="right" >
+      <ion-button [routerLink]="['/car/own']" size="small"> View my list</ion-button>
+ </div>
+    <ion-list>
+
+      <span [routerLink]="['/detail-car', car.id]" *ngFor="let car of tab" >
+
+        <ion-item >
+          <ion-thumbnail>
+            <img height="500" [src]="car.image"/>
+
+          </ion-thumbnail>
+
+          <ion-label>{{ car.car_name }} </ion-label>
+
+          </ion-item>
+      </span>
+    </ion-list>
+
+  </ion-content>
+
